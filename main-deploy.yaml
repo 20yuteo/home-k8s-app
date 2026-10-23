@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: main-deploy
+  name: main-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: main-deploy
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: main-deploy
+    spec:
+      containers:
+      - image: pihole/pihole:latest
+        name: pihole
+        resources: {}
+status: {}
